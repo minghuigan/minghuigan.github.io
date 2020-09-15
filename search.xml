@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>My First Blog</title>
+    <url>/2020/09/15/My-First-Blog/</url>
+    <content><![CDATA[<h1 id="我叫阴兵鸟哥"><a href="#我叫阴兵鸟哥" class="headerlink" title="我叫阴兵鸟哥"></a>我叫阴兵鸟哥</h1>]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>Life</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2020/09/15/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<a id="more"></a>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
@@ -17,17 +29,6 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>My First Blog</title>
-    <url>/2020/09/15/My-First-Blog/</url>
-    <content><![CDATA[<h1 id="我叫阴兵鸟哥"><a href="#我叫阴兵鸟哥" class="headerlink" title="我叫阴兵鸟哥"></a>我叫阴兵鸟哥</h1>]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>Life</tag>
-      </tags>
   </entry>
   <entry>
     <title>my second blog</title>

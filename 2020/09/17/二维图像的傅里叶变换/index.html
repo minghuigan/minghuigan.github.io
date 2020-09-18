@@ -22,32 +22,32 @@
 
   <meta name="description" content="傅里叶变换理解matlab实现二维图像傅里叶变换实验准备实验要求编写程序对此二维图像（自行转换为灰度图）展开傅里叶变换，提取傅里叶变换图像（将频率原点移至图像中心），并形成实验报告  实验准备因为此前对于matlab不太了解，但实验要求建议使用matlab完成实验，所以趁此机会我也能够熟悉matlab的使用，并且了解matlab中自带的图像处理函数。在理解完傅立叶变换的物理意义之后我提出四种方案：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
+<meta property="og:title" content="傅里叶变换的理解以及二维图像的傅里叶变换">
 <meta property="og:url" content="http://example.com/2020/09/17/%E4%BA%8C%E7%BB%B4%E5%9B%BE%E5%83%8F%E7%9A%84%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/index.html">
 <meta property="og:site_name" content="Lucas">
 <meta property="og:description" content="傅里叶变换理解matlab实现二维图像傅里叶变换实验准备实验要求编写程序对此二维图像（自行转换为灰度图）展开傅里叶变换，提取傅里叶变换图像（将频率原点移至图像中心），并形成实验报告  实验准备因为此前对于matlab不太了解，但实验要求建议使用matlab完成实验，所以趁此机会我也能够熟悉matlab的使用，并且了解matlab中自带的图像处理函数。在理解完傅立叶变换的物理意义之后我提出四种方案：">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="c:/matlab/HUST.jpg">
-<meta property="og:image" content="c:/Users/86153/Desktop/傅立叶变换定义.png">
-<meta property="og:image" content="c:/Users/86153/Desktop/分离性傅立叶变换.png">
-<meta property="og:image" content="c:/Users/86153/Desktop/分离性傅立叶变换原理图.png">
-<meta property="og:image" content="c:/Users/86153/Desktop/快速1.PNG">
-<meta property="og:image" content="c:/Users/86153/Desktop/快速2.PNG">
-<meta property="og:image" content="c:/Users/86153/Desktop/快速3.PNG">
-<meta property="og:image" content="c:/Users/86153/Desktop/快速4.PNG">
-<meta property="og:image" content="c:/Users/86153/Desktop/系统函数.PNG">
-<meta property="og:image" content="c:/Users/86153/Desktop/系统函数耗时.PNG">
-<meta property="og:image" content="c:/Users/86153/Desktop/分离性.PNG">
-<meta property="og:image" content="c:/Users/86153/Desktop/分离性耗时.PNG">
-<meta property="og:image" content="c:/Users/86153/Desktop/快速傅里叶变换.PNG">
-<meta property="og:image" content="c:/Users/86153/Desktop/快速傅里叶变换耗时.PNG">
-<meta property="og:image" content="c:/Users/86153/Desktop/全黑.PNG">
+<meta property="og:image" content="http://example.com/2020/09/17/image/HUST.jpg">
+<meta property="og:image" content="http://example.com/2020/09/17/image/%E5%82%85%E7%AB%8B%E5%8F%B6%E5%8F%98%E6%8D%A2%E5%AE%9A%E4%B9%89.png">
+<meta property="og:image" content="http://example.com/2020/09/17/image/%E5%88%86%E7%A6%BB%E6%80%A7%E5%82%85%E7%AB%8B%E5%8F%B6%E5%8F%98%E6%8D%A2.png">
+<meta property="og:image" content="http://example.com/2020/09/17/image/%E5%88%86%E7%A6%BB%E6%80%A7%E5%82%85%E7%AB%8B%E5%8F%B6%E5%8F%98%E6%8D%A2%E5%8E%9F%E7%90%86%E5%9B%BE.png">
+<meta property="og:image" content="http://example.com/2020/09/17/image/%E5%BF%AB%E9%80%9F1.PNG">
+<meta property="og:image" content="http://example.com/2020/09/17/image/%E5%BF%AB%E9%80%9F2.PNG">
+<meta property="og:image" content="http://example.com/2020/09/17/image/%E5%BF%AB%E9%80%9F3.PNG">
+<meta property="og:image" content="http://example.com/2020/09/17/image/%E5%BF%AB%E9%80%9F4.PNG">
+<meta property="og:image" content="http://example.com/2020/09/17/image/%E7%B3%BB%E7%BB%9F%E5%87%BD%E6%95%B0.PNG">
+<meta property="og:image" content="http://example.com/2020/09/17/image/%E7%B3%BB%E7%BB%9F%E5%87%BD%E6%95%B0%E8%80%97%E6%97%B6.PNG">
+<meta property="og:image" content="http://example.com/2020/09/17/image/%E5%88%86%E7%A6%BB%E6%80%A7.PNG">
+<meta property="og:image" content="http://example.com/2020/09/17/image/%E5%88%86%E7%A6%BB%E6%80%A7%E8%80%97%E6%97%B6.PNG">
+<meta property="og:image" content="http://example.com/2020/09/17/image/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2.PNG">
+<meta property="og:image" content="http://example.com/2020/09/17/image/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E8%80%97%E6%97%B6.PNG">
+<meta property="og:image" content="http://example.com/2020/09/17/image/%5C%E5%85%A8%E9%BB%91.PNG">
 <meta property="article:published_time" content="2020-09-16T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-09-17T14:23:31.012Z">
+<meta property="article:modified_time" content="2020-09-18T08:37:47.329Z">
 <meta property="article:author" content="Lucas">
 <meta property="article:tag" content="matlab 图像处理 傅里叶变换">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="c:/matlab/HUST.jpg">
+<meta name="twitter:image" content="http://example.com/2020/09/17/image/HUST.jpg">
 
 <link rel="canonical" href="http://example.com/2020/09/17/%E4%BA%8C%E7%BB%B4%E5%9B%BE%E5%83%8F%E7%9A%84%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/">
 
@@ -62,7 +62,7 @@
   };
 </script>
 
-  <title>Hello World | Lucas</title>
+  <title>傅里叶变换的理解以及二维图像的傅里叶变换 | Lucas</title>
   
 
 
@@ -224,7 +224,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hello World
+          傅里叶变换的理解以及二维图像的傅里叶变换
         </h1>
 
         <div class="post-meta">
@@ -233,10 +233,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-09-17 00:00:00 / 修改时间：22:23:31" itemprop="dateCreated datePublished" datetime="2020-09-17T00:00:00+08:00">2020-09-17</time>
+              <time title="创建时间：2020-09-17 00:00:00" itemprop="dateCreated datePublished" datetime="2020-09-17T00:00:00+08:00">2020-09-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-18 16:37:47" itemprop="dateModified" datetime="2020-09-18T16:37:47+08:00">2020-09-18</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -259,23 +265,23 @@
 
       
         <h2 id="傅里叶变换理解"><a href="#傅里叶变换理解" class="headerlink" title="傅里叶变换理解"></a>傅里叶变换理解</h2><h2 id="matlab实现二维图像傅里叶变换"><a href="#matlab实现二维图像傅里叶变换" class="headerlink" title="matlab实现二维图像傅里叶变换"></a>matlab实现二维图像傅里叶变换</h2><h3 id="实验准备"><a href="#实验准备" class="headerlink" title="实验准备"></a>实验准备</h3><h4 id="实验要求"><a href="#实验要求" class="headerlink" title="实验要求"></a>实验要求</h4><p>编写程序对此二维图像（自行转换为灰度图）展开傅里叶变换，提取傅里叶变换图像（将频率原点移至图像中心），并形成实验报告</p>
-<p><img src="C:\matlab\HUST.jpg"></p>
+<p><img src="../image/HUST.jpg"></p>
 <h4 id="实验准备-1"><a href="#实验准备-1" class="headerlink" title="实验准备"></a>实验准备</h4><p>因为此前对于matlab不太了解，但实验要求建议使用matlab完成实验，所以趁此机会我也能够熟悉matlab的使用，并且了解matlab中自带的图像处理函数。在理解完傅立叶变换的物理意义之后我提出四种方案：</p>
 <p>1.利用定义求解此二维图像的傅立叶变换；</p>
 <p>2.利用傅立叶变换的可分离性降低算法复杂度；</p>
 <p>3.利用快速傅立叶变换进一步降低算法复杂度；</p>
 <p>4.调用系统函数实现实验要求并且进行对比；</p>
 <p>但在进行利用傅立叶变换定义进行代码实现时，此图片像素大小为785*442，时间复杂度过高，程序长时间无法运行出结果，故在这里不进行傅立叶变换定义的代码与结果展示。</p>
-<h3 id="原理分析"><a href="#原理分析" class="headerlink" title="原理分析"></a>原理分析</h3><h4 id="1-利用傅立叶定义"><a href="#1-利用傅立叶定义" class="headerlink" title="1.利用傅立叶定义"></a>1.利用傅立叶定义</h4><p><img src="C:\Users\86153\Desktop\傅立叶变换定义.png"></p>
+<h3 id="原理分析"><a href="#原理分析" class="headerlink" title="原理分析"></a>原理分析</h3><h4 id="1-利用傅立叶定义"><a href="#1-利用傅立叶定义" class="headerlink" title="1.利用傅立叶定义"></a>1.利用傅立叶定义</h4><p><img src="../image/%E5%82%85%E7%AB%8B%E5%8F%B6%E5%8F%98%E6%8D%A2%E5%AE%9A%E4%B9%89.png"></p>
 <p>由公式可得，复杂度为o(n^4）;</p>
-<h4 id="可分离性傅立叶变换"><a href="#可分离性傅立叶变换" class="headerlink" title="可分离性傅立叶变换"></a>可分离性傅立叶变换</h4><p><img src="C:\Users\86153\Desktop\分离性傅立叶变换.png"></p>
-<p><img src="C:\Users\86153\Desktop\分离性傅立叶变换原理图.png"></p>
+<h4 id="可分离性傅立叶变换"><a href="#可分离性傅立叶变换" class="headerlink" title="可分离性傅立叶变换"></a>可分离性傅立叶变换</h4><p><img src="../image/%E5%88%86%E7%A6%BB%E6%80%A7%E5%82%85%E7%AB%8B%E5%8F%B6%E5%8F%98%E6%8D%A2.png"></p>
+<p><img src="../image/%E5%88%86%E7%A6%BB%E6%80%A7%E5%82%85%E7%AB%8B%E5%8F%B6%E5%8F%98%E6%8D%A2%E5%8E%9F%E7%90%86%E5%9B%BE.png"></p>
 <p>由原理图可知，此算法时间复杂度为o（n^3）;</p>
 <h4 id="快速傅立叶变换"><a href="#快速傅立叶变换" class="headerlink" title="快速傅立叶变换"></a>快速傅立叶变换</h4><p>核心思想是分解傅立叶定义公式，分为奇偶两列，消除冗余，一次分解可以减少近一半的运算量，而如果N=2^M，则可以进行M次分解；原理如下：</p>
-<p><img src="C:\Users\86153\Desktop\快速1.PNG"></p>
-<p><img src="C:\Users\86153\Desktop\快速2.PNG"></p>
-<p><img src="C:\Users\86153\Desktop\快速3.PNG"></p>
-<p><img src="C:\Users\86153\Desktop\快速4.PNG"></p>
+<p><img src="../image/%E5%BF%AB%E9%80%9F1.PNG"></p>
+<p><img src="../image/%E5%BF%AB%E9%80%9F2.PNG"></p>
+<p><img src="../image/%E5%BF%AB%E9%80%9F3.PNG"></p>
+<p><img src="../image/%E5%BF%AB%E9%80%9F4.PNG"></p>
 <h5 id="算法程序"><a href="#算法程序" class="headerlink" title="算法程序"></a>算法程序</h5><p>1.先利用nextpow2求解灰度图矩阵行列数最接近2次幂的数字M1，M2，令N1=2^M1,N2=2^M2,且依次为基础构造N1*N2的矩阵,目的是为了能够完整构造行列数都是2的整次幂的矩阵，便于分解。</p>
 <p>2.扩充存放傅里叶变换结果的矩阵m,若该矩阵的行列数小于N1或者N2，对其尾部补0。</p>
 <p>3.对m矩阵的行，列分别进行倒序，之后分别对于逆序后矩阵的行，列进行蝶形运算。（invert函数实现对矩阵行列的逆序，DieXing函数实现蝶形运算，但需要temp参数分离对行，列的操作，temp=0对行逆序并蝶形运算，temp=1对列逆序并蝶形操作）</p>
@@ -294,23 +300,23 @@
 
 
 <h3 id="效果展示与结果分析"><a href="#效果展示与结果分析" class="headerlink" title="效果展示与结果分析"></a>效果展示与结果分析</h3><p>为了检验傅立叶变换的有效性，调用matlab中的ifft2（）函数进行傅立叶逆变换还原图像，检验傅立叶变换是否正确。</p>
-<h4 id="调用系统函数-1"><a href="#调用系统函数-1" class="headerlink" title="调用系统函数"></a>调用系统函数</h4><h5 id="1-效果图"><a href="#1-效果图" class="headerlink" title="1.效果图"></a>1.效果图</h5><p><img src="C:\Users\86153\Desktop\系统函数.PNG" alt="效果图"></p>
-<p><img src="C:\Users\86153\Desktop\系统函数耗时.PNG" alt="耗时分析"></p>
+<h4 id="调用系统函数-1"><a href="#调用系统函数-1" class="headerlink" title="调用系统函数"></a>调用系统函数</h4><h5 id="1-效果图"><a href="#1-效果图" class="headerlink" title="1.效果图"></a>1.效果图</h5><p><img src="../image/%E7%B3%BB%E7%BB%9F%E5%87%BD%E6%95%B0.PNG" alt="效果图"></p>
+<p><img src="../image/%E7%B3%BB%E7%BB%9F%E5%87%BD%E6%95%B0%E8%80%97%E6%97%B6.PNG" alt="耗时分析"></p>
 <h5 id="2-结果分析"><a href="#2-结果分析" class="headerlink" title="2.结果分析"></a>2.结果分析</h5><p>matlab的底层函数包括傅立叶变换fft2（），频移函数fftshift()都能很好地实现傅立叶变换，并且耗时仅0.468s，查阅资料可知核心思想时矩阵乘法运算实现。</p>
-<h4 id="分离性傅立叶变换-1"><a href="#分离性傅立叶变换-1" class="headerlink" title="分离性傅立叶变换"></a>分离性傅立叶变换</h4><h5 id="1-效果图-1"><a href="#1-效果图-1" class="headerlink" title="1.效果图"></a>1.效果图</h5><p><img src="C:\Users\86153\Desktop\分离性.PNG"></p>
-<p><img src="C:\Users\86153\Desktop\分离性耗时.PNG"></p>
+<h4 id="分离性傅立叶变换-1"><a href="#分离性傅立叶变换-1" class="headerlink" title="分离性傅立叶变换"></a>分离性傅立叶变换</h4><h5 id="1-效果图-1"><a href="#1-效果图-1" class="headerlink" title="1.效果图"></a>1.效果图</h5><p><img src="../image/%E5%88%86%E7%A6%BB%E6%80%A7.PNG"></p>
+<p><img src="../image/%E5%88%86%E7%A6%BB%E6%80%A7%E8%80%97%E6%97%B6.PNG"></p>
 <h5 id="2-结果分析-1"><a href="#2-结果分析-1" class="headerlink" title="2.结果分析"></a>2.结果分析</h5><p>由上图可知，分离性傅里叶变换不会导致逆变换后的灰度图失真，但最大问题是算法复杂度仍为o（n^3），耗时209.75s，但相比定义实现还是远远降低了复杂度，并且与自行设计的快速傅里叶变换算法相比，优点是不会出现黑色边框，经过傅里叶正逆变换后能很好地实现图像保真。</p>
 <h4 id="快速傅立叶变换-2"><a href="#快速傅立叶变换-2" class="headerlink" title="快速傅立叶变换"></a>快速傅立叶变换</h4><p>#####　１．效果图</p>
-<p><img src="C:\Users\86153\Desktop\快速傅里叶变换.PNG"></p>
-<p><img src="C:\Users\86153\Desktop\快速傅里叶变换耗时.PNG"></p>
+<p><img src="../image/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2.PNG"></p>
+<p><img src="../image/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E8%80%97%E6%97%B6.PNG"></p>
 <h5 id="2-结果分析-2"><a href="#2-结果分析-2" class="headerlink" title="2.结果分析"></a>2.结果分析</h5><p>由上图可知，傅里叶逆变换后图像出现黑色边框，原因是因为在进行快速傅里叶变换函数中对存放傅里叶变换结果的m矩阵进行了扩充（原因是在进行分解时用了nextpow2求解图像矩阵行列的最接近2次幂的数），而m矩阵的行列数小于新产生的傅里叶变换矩阵，并且在补充部分添0，所以在进行逆变换时出现黑色边框，但观察灰度图可知其仍然可以很好地复原图像，可知此快速傅里叶变换结果有效。</p>
 <p>而耗时为1.958s,远大于系统的快速傅里叶变换函数，考虑是因为上面提到的矩阵扩充带来的冗余以及算法设计不足，但耗时远远小于分离性傅里叶变换的耗时，说明基本达到降低算法复杂度的目标。</p>
-<h4 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h4><h5 id="1-初次实验产生傅里叶变换图像全黑"><a href="#1-初次实验产生傅里叶变换图像全黑" class="headerlink" title="1.初次实验产生傅里叶变换图像全黑"></a>1.初次实验产生傅里叶变换图像全黑</h5><p><img src="C:\Users\86153\Desktop\全黑.PNG"></p>
+<h4 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h4><h5 id="1-初次实验产生傅里叶变换图像全黑"><a href="#1-初次实验产生傅里叶变换图像全黑" class="headerlink" title="1.初次实验产生傅里叶变换图像全黑"></a>1.初次实验产生傅里叶变换图像全黑</h5><p><img src="../image/%5C%E5%85%A8%E9%BB%91.PNG"></p>
 <p>分析：通过网上查阅资料可知在进行傅里叶变换再取模后数值范围很大，maxX = 2.04e+05，minX = 0.009，此时会导致低频成分占多数，输出图像全黑。</p>
 <p>解决办法：对傅里叶变换后的矩阵取模在log运算，对频谱进行缩放，而使用abs（x）+1是因为对于（0，1）之间的x值经过取对数后会变成负值，而log（x+1）则将所有的x值映射到正数范围内。</p>
 <h5 id="2-为什么要将RGB图转化为灰度图再进行傅里叶变换？"><a href="#2-为什么要将RGB图转化为灰度图再进行傅里叶变换？" class="headerlink" title="2.为什么要将RGB图转化为灰度图再进行傅里叶变换？"></a>2.为什么要将RGB图转化为灰度图再进行傅里叶变换？</h5><p>分析：对于RGB真彩图像来说，读入后是以三维矩阵形式存储的，如果此时直接进行傅里叶变换，则频谱图会显示为一片空白或者是密密麻麻的。所以在对RGB图像进行傅里叶变换前要进行类型转换，使用rgb2gray将其转换为灰度图像，使用rgb2gray其频谱图呈灰色基调。</p>
 <h5 id="3-imshow-img-与imshow（img，-）有什么区别？"><a href="#3-imshow-img-与imshow（img，-）有什么区别？" class="headerlink" title="3.imshow(img)与imshow（img，[]）有什么区别？"></a>3.imshow(img)与imshow（img，[]）有什么区别？</h5><p>使用imshow函数显示图像时要注意图像矩阵类型，当图像是double类型时要使用imshow（I,[]）来根据数据矩阵的数值范围自动设置灰度图像显示范围，而imgshow（img）中img的类型是unit8类型，取值范围为[0,255],可以完整显示颜色；</p>
-<h3 id="实验总结"><a href="#实验总结" class="headerlink" title="实验总结"></a>实验总结</h3><p>这次实验与大二上的数据结构课设有相似之处，但对于matlab的使用让我感觉到在进行简单图像处理时matlab要比opencv库要简单许多，并且matlab上手较为容易，在编写脚本程序时语法规则简单，是很好的计算软件，这次实验让我熟悉了matlab的基本操作，也对于傅里叶变换的物理意义有了一个较全面的了解。</p>
+<h3 id="实验总结"><a href="#实验总结" class="headerlink" title="实验总结"></a>实验总结</h3><p>这次实验与大二上的数据结构课设有相似之处，但对于matlab的使用让我感觉到在进行简单图像处理时matlab要比opencv库要简单许多，并且matlab上手较为容易，在编写脚本程序时语法规则简单，是很好的计算软件，这次实验让我熟悉了matlab的基本操作，也对于傅里叶变换的物理意义有了一个较全面的了解，并且此次试验结果我已自动上传到我的github博客上，网址：minghuigan.github.io.</p>
 
     </div>
 

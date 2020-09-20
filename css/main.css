@@ -1136,36 +1136,30 @@ pre .javascript .function {
   display: inline-block;
 }
 .site-author-image {
+  border: 1px solid #eee;
   display: block;
   margin: 0 auto;
-  padding: $site-author-image-padding;
   max-width: 120px;
-  height: $site-author-image-height;
-  border: 1px solid #eee;
-  border-radius: 80px;
-  -webkit-border-radius: 80px;
-  -moz-border-radius: 80px;
-  box-shadow: inset 0 -1px 0 #333 sf;
-  -webkit-transition: -webkit-transform 1s ease-out;
-  -moz-transition: -moz-transform 1s ease-out;
+  padding: 2px;
+  border-radius: 50%;
+}
+.site-author-image {
   transition: transform 1s ease-out;
 }
 .site-author-image:hover {
-  -webkit-transform: rotateZ(360deg);
-  -moz-transform: rotateZ(360deg);
   transform: rotateZ(360deg);
 }
 .site-author-name {
-  margin: 0;
-  text-align: $site-author-name-align;
   color: var(--text-color);
   font-weight: 600;
+  margin: 0;
+  text-align: center;
 }
 .site-description {
-  margin-top: 0;
-  text-align: $site-description-align;
-  font-size: 0.8125em;
   color: #999;
+  font-size: 0.8125em;
+  margin-top: 0;
+  text-align: center;
 }
 .links-of-author {
   margin-top: 15px;
@@ -1181,7 +1175,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff1f03;
+  background: #2d86ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;

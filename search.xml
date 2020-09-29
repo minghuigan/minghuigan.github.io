@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
-    <url>/2020/09/22/%E4%BA%8C%E7%BB%B4%E5%9B%BE%E5%83%8F%E7%9A%84%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/</url>
-    <content><![CDATA[<p>姓名：甘明辉                      学号:U201814165                     班级：自实1801</p>
-<h2 id="傅里叶变换理解"><a href="#傅里叶变换理解" class="headerlink" title="傅里叶变换理解"></a>傅里叶变换理解</h2><h3 id="频域"><a href="#频域" class="headerlink" title="频域"></a>频域</h3><p>傅里叶变换是将时域函数变换到频域中进行分析。那什么是频域呢？</p>
+    <title>二维图像的傅里叶变换</title>
+    <url>/2020/09/29/%E4%BA%8C%E7%BB%B4%E5%9B%BE%E5%83%8F%E7%9A%84%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/</url>
+    <content><![CDATA[<h2 id="傅里叶变换理解"><a href="#傅里叶变换理解" class="headerlink" title="傅里叶变换理解"></a>傅里叶变换理解</h2><h3 id="频域"><a href="#频域" class="headerlink" title="频域"></a>频域</h3><p>傅里叶变换是将时域函数变换到频域中进行分析。那什么是频域呢？</p>
 <p>傅里叶告诉我们，任何周期函数都可以看做不同振幅，不同相位正弦波的叠加。而在频域中，某一频率的正弦波的振幅和相位不随时间变化，频率一旦确定，正弦波即确定。而时域中的任意时间的波形都是由这些在频域中的正弦波在此时间的叠加。可以把频域理解为一个静止的世界，在频域中函数不会随时间发生改变，只会跟频率有关。下面举一个形象的例子：</p>
 <a id="more"></a>
 
@@ -81,5 +80,11 @@
 <p>【2】<a href="https://www.cnblogs.com/h2zZhou/p/8405717.html">https://www.cnblogs.com/h2zZhou/p/8405717.html</a>     深入浅出的讲解傅里叶变换（真正的通俗易懂）</p>
 <p>【3】<a href="https://wenku.baidu.com/view/d87eb57459fb770bf78a6529647d27284b7337d1.html#">https://wenku.baidu.com/view/d87eb57459fb770bf78a6529647d27284b7337d1.html#</a>       fft算法原理/百度文库</p>
 ]]></content>
+      <categories>
+        <category>图像处理</category>
+      </categories>
+      <tags>
+        <tag>matlab 傅里叶变换</tag>
+      </tags>
   </entry>
 </search>

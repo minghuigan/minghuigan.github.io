@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="姓名：甘明辉                      学号:U201814165                     班级：自实1801 傅里叶变换理解频域傅里叶变换是将时域函数变换到频域中进行分析。那什么是频域呢？ 傅里叶告诉我们，任何周期函数都可以看做不同振幅，不同相位正弦波的叠加。而在频域中，某一频率的正弦波的振幅和相位不随时间变化，频率一旦确定，正弦波即确定。而时域中的任意时间的波形">
+  <meta name="description" content="傅里叶变换理解频域傅里叶变换是将时域函数变换到频域中进行分析。那什么是频域呢？ 傅里叶告诉我们，任何周期函数都可以看做不同振幅，不同相位正弦波的叠加。而在频域中，某一频率的正弦波的振幅和相位不随时间变化，频率一旦确定，正弦波即确定。而时域中的任意时间的波形都是由这些在频域中的正弦波在此时间的叠加。可以把频域理解为一个静止的世界，在频域中函数不会随时间发生改变，只会跟频率有关。下面举一个形象的例子：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Lucas">
-<meta property="og:url" content="http://example.com/2020/09/22/%E4%BA%8C%E7%BB%B4%E5%9B%BE%E5%83%8F%E7%9A%84%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/index.html">
+<meta property="og:title" content="二维图像的傅里叶变换">
+<meta property="og:url" content="http://example.com/2020/09/29/%E4%BA%8C%E7%BB%B4%E5%9B%BE%E5%83%8F%E7%9A%84%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/index.html">
 <meta property="og:site_name" content="Lucas">
-<meta property="og:description" content="姓名：甘明辉                      学号:U201814165                     班级：自实1801 傅里叶变换理解频域傅里叶变换是将时域函数变换到频域中进行分析。那什么是频域呢？ 傅里叶告诉我们，任何周期函数都可以看做不同振幅，不同相位正弦波的叠加。而在频域中，某一频率的正弦波的振幅和相位不随时间变化，频率一旦确定，正弦波即确定。而时域中的任意时间的波形">
+<meta property="og:description" content="傅里叶变换理解频域傅里叶变换是将时域函数变换到频域中进行分析。那什么是频域呢？ 傅里叶告诉我们，任何周期函数都可以看做不同振幅，不同相位正弦波的叠加。而在频域中，某一频率的正弦波的振幅和相位不随时间变化，频率一旦确定，正弦波即确定。而时域中的任意时间的波形都是由这些在频域中的正弦波在此时间的叠加。可以把频域理解为一个静止的世界，在频域中函数不会随时间发生改变，只会跟频率有关。下面举一个形象的例子：">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/image/%E6%97%B6%E5%9F%9F%E9%9F%B3%E4%B9%90.PNG">
 <meta property="og:image" content="http://example.com/image/%E9%A2%91%E5%9F%9F%E9%9F%B3%E4%B9%90.PNG">
@@ -50,14 +50,14 @@
 <meta property="og:image" content="http://example.com/image/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2.PNG">
 <meta property="og:image" content="http://example.com/image/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E8%80%97%E6%97%B6.PNG">
 <meta property="og:image" content="http://example.com/image/%5C%E5%85%A8%E9%BB%91.PNG">
-<meta property="article:published_time" content="2020-09-22T08:23:57.540Z">
-<meta property="article:modified_time" content="2020-09-22T09:16:08.289Z">
+<meta property="article:published_time" content="2020-09-28T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-09-29T11:57:15.715Z">
 <meta property="article:author" content="Lucas">
-<meta property="article:tag" content="Lucas">
+<meta property="article:tag" content="matlab 傅里叶变换">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/image/%E6%97%B6%E5%9F%9F%E9%9F%B3%E4%B9%90.PNG">
 
-<link rel="canonical" href="http://example.com/2020/09/22/%E4%BA%8C%E7%BB%B4%E5%9B%BE%E5%83%8F%E7%9A%84%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/">
+<link rel="canonical" href="http://example.com/2020/09/29/%E4%BA%8C%E7%BB%B4%E5%9B%BE%E5%83%8F%E7%9A%84%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/">
 
 
 <script id="page-configurations">
@@ -70,7 +70,7 @@
   };
 </script>
 
-  <title> | Lucas</title>
+  <title>二维图像的傅里叶变换 | Lucas</title>
   
 
 
@@ -219,7 +219,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/22/%E4%BA%8C%E7%BB%B4%E5%9B%BE%E5%83%8F%E7%9A%84%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/29/%E4%BA%8C%E7%BB%B4%E5%9B%BE%E5%83%8F%E7%9A%84%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/header.jpg">
@@ -232,7 +232,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
+          二维图像的傅里叶变换
         </h1>
 
         <div class="post-meta">
@@ -243,7 +243,16 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-09-22 16:23:57 / 修改时间：17:16:08" itemprop="dateCreated datePublished" datetime="2020-09-22T16:23:57+08:00">2020-09-22</time>
+              <time title="创建时间：2020-09-29 00:00:00 / 修改时间：19:57:15" itemprop="dateCreated datePublished" datetime="2020-09-29T00:00:00+08:00">2020-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">图像处理</span></a>
+                </span>
             </span>
 
           
@@ -257,8 +266,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>姓名：甘明辉                      学号:U201814165                     班级：自实1801</p>
-<h2 id="傅里叶变换理解"><a href="#傅里叶变换理解" class="headerlink" title="傅里叶变换理解"></a>傅里叶变换理解</h2><h3 id="频域"><a href="#频域" class="headerlink" title="频域"></a>频域</h3><p>傅里叶变换是将时域函数变换到频域中进行分析。那什么是频域呢？</p>
+        <h2 id="傅里叶变换理解"><a href="#傅里叶变换理解" class="headerlink" title="傅里叶变换理解"></a>傅里叶变换理解</h2><h3 id="频域"><a href="#频域" class="headerlink" title="频域"></a>频域</h3><p>傅里叶变换是将时域函数变换到频域中进行分析。那什么是频域呢？</p>
 <p>傅里叶告诉我们，任何周期函数都可以看做不同振幅，不同相位正弦波的叠加。而在频域中，某一频率的正弦波的振幅和相位不随时间变化，频率一旦确定，正弦波即确定。而时域中的任意时间的波形都是由这些在频域中的正弦波在此时间的叠加。可以把频域理解为一个静止的世界，在频域中函数不会随时间发生改变，只会跟频率有关。下面举一个形象的例子：</p>
 <a id="more"></a>
 
@@ -342,6 +350,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/matlab-%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/" rel="tag"># matlab 傅里叶变换</a>
+          </div>
 
         
 
@@ -423,6 +434,18 @@
           <span class="site-state-item-count">1</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
